@@ -118,29 +118,29 @@ local pushTargetOptions = {
 -- Uncomment this line if you are using wp-seats
 local chairCustomTargetOptions = {
     {
-        event = "wp-seats:client:sitOnChair",
+        event = "chair:sit",
         icon = "fas fa-chair",
         label = "Sit down",
     },
 }
 
 -- Uncomment this line if you are using wp-yogamats
--- local yogaCustomTargetOptions = {
---     {
---         event = "wp-yogamats:client:useYogaMat",
---         icon = "fas fa-pray",
---         label = "Do yoga",
---     },
--- }
+local yogaCustomTargetOptions = {
+{
+        event = "wp-yogamats:client:useYogaMat",
+icon = "fas fa-pray",
+label = "Do yoga",
+},
+}
 
 -- Uncomment this line if you are using wp-printer
--- local printerCustomTargetOptions = {
---     {
---         event = "wp-printer:client:UsePrinter",
---         icon = "fas fa-print",
---         label = "Use printer",
---     },
--- }
+local printerCustomTargetOptions = {
+{
+        event = "wp-printer:client:UsePrinter",
+icon = "fas fa-print",
+label = "Use printer",
+},
+}
 
 -- Uncomment this line if you are using wp-fireworks
 -- local fireworkCustomTargetOptions = {
@@ -179,6 +179,37 @@ local chairCustomTargetOptions = {
 ---@param customTargetOptions: Custom target options for this item, if it should do more than just pickup
 ---@param customPickupEvent: If you want to override the default pickup event, set this to the event you want to be called when the "pickup" target option is used
 Config.PlaceableProps = {
+
+    -- food props 
+    {item = "animal_breads", label = "Animal Bread", model = "kawaii_animal_breads", isFrozen = true},
+    {item = "hearttray", label = "Heart tray", model = "kawaii_heart_tray", isFrozen = true},
+    {item = "rilakkuma_cake", label = "Cake", model = "kawaii_rilakkuma_cake07", isFrozen = true},
+    {item = "sushiplatter", label = "Sushi Platter", model = "kawaii_sushi_platter", isFrozen = true},
+    {item = "bentobox", label = "Bento Box", model = "kawaii_totoro_bento09", isFrozen = true},
+    {item = "cakebday", label = "Birthday Cake", model = "bzzz_prop_cake_birthday_001", isFrozen = true},
+    {item = "cakebaby", label = "Baby Cake", model = "bzzz_prop_cake_baby_001", isFrozen = true},
+    {item = "cakecasino", label = "Casino Cake", model = "bzzz_prop_cake_casino001", isFrozen = true},
+    {item = "cakelove", label = "Love Cake", model = "bzzz_prop_cake_love_001", isFrozen = true},
+    {item = "cakeunicorn", label = "Unicorn Cake", model = "pata_cake", isFrozen = true},
+    {item = "cakepride", label = "Unicorn Cake", model = "pata_cake2", isFrozen = true},
+    {item = "cakemud", label = "Chocolate Mud Cake", model = "pata_cake3", isFrozen = true},
+    {item = "pizzabox", label = "Pizza Box", model = "prop_pizza_box_02", isFrozen = true},
+    {item = "foodplate", label = "Plate of Food", model = "prop_cs_plate_01", isFrozen = true},
+    {item = "easterbasket", label = "Basket of easter eggs", model = "bzzz_event_easter_basket_b", isFrozen = true},
+    {item = "foodtraya", label = "Food Tray 1", model = "prop_food_bs_tray_03", isFrozen = true},
+    {item = "foodtrayb", label = "Food Tray 2", model = "prop_food_bs_tray_02", isFrozen = true},
+    {item = "foodtrayc", label = "Food Tray 2", model = "prop_food_cb_tray_02", isFrozen = true},
+    {item = "foodtrayd", label = "Food Tray 2", model = "prop_food_tray_02", isFrozen = true},
+    {item = "foodtraye", label = "Food Tray 2", model = "prop_food_tray_03", isFrozen = true},
+    {item = "gifta", label = "Gift 1", model = "bzzz_prop_gift_orange", isFrozen = true},
+    {item = "giftb", label = "Gift 2", model = "bzzz_prop_gift_purple", isFrozen = true},
+    {item = "giftc", label = "Gift 3", model = "xm3_prop_xm3_present_01a", isFrozen = true},
+    {item = "teddy", label = "Teddy Bear", model = "v_ilev_mr_rasberryclean", isFrozen = true},
+    
+
+    --Brummie
+    {item = "heartshape", label = "Heart Shape", model = "brum_heart", isFrozen = true},
+
     -- Constructions props
     {item = "roadworkbarrier", label = "Road Work Ahead Barrier", model = "prop_barrier_work04a", isFrozen = true},
     {item = "roadclosedbarrier", label = "Road Closed Barrier", model = "xm3_prop_xm3_road_barrier_01a", isFrozen = true},
@@ -253,6 +284,7 @@ Config.PlaceableProps = {
     {item = "examlight", label = "Exam Light", model = "v_med_examlight", isFrozen = true},
     {item = "hazardbin", label = "Hazard Bin", model = "v_med_medwastebin", isFrozen = true},
     {item = "microscope", label = "Microscope", model = "v_med_microscope", isFrozen = true},
+{item = "defibrillator", label = "Defibrillator", model = "v_med_oscillator1", isFrozen = true},
     {item = "oscillator", label = "Oscillator", model = "v_med_oscillator3", isFrozen = true},
     {item = "medmachine", label = "Medical Machine", model = "v_med_oscillator4", isFrozen = true},
     {item = "bodybag", label = "Body Bag", model = "xm_prop_body_bag", isFrozen = true},
@@ -300,13 +332,83 @@ Config.PlaceableProps = {
     {item = "largesoccerball", label = "Large Soccer Ball", model = "stt_prop_stunt_soccer_ball", isFrozen = false},
     {item = "soccerball", label = "Soccer Ball", model = "p_ld_soc_ball_01", isFrozen = false},
     {item = "stepladder", label = "Step Ladder", model = "v_med_cor_stepladder", isFrozen = true},
-    {item = "sexdoll", label = "Sex Doll", model = "prop_defilied_ragdoll_01", isFrozen = true},
+    
+    -- ems props
+    {item = "lucas3", label = "Lucas 2", model = "lucas3", isFrozen = true},
+    {item = "lucas2", label = "Lucas 1", model = "lucas2", isFrozen = true},
+    {item = "lifepak15", label = "Life Pack", model = "lifepak15", isFrozen = true},
 
     -- Pushable items
     {item = "shoppingcart1", label = "Shopping Cart (Empty)", model = "prop_rub_trolley01a", isFrozen = false, customTargetOptions = pushAndSitTargetOptions},
     {item = "shoppingcart2", label = "Shopping Cart (Full)", model = "prop_skid_trolley_2", isFrozen = false, customTargetOptions = pushTargetOptions},
     {item = "shoppingcart3", label = "Shopping Cart (Empty)", model = "prop_rub_trolley02a", isFrozen = false, customTargetOptions = pushAndSitTargetOptions},
     {item = "shoppingcart4", label = "Shopping Cart (Full)", model = "prop_skid_trolley_1", isFrozen = false, customTargetOptions = pushTargetOptions},
+
+    {item = "stretcher1", label = "Stretcher 1", model = "strykergurney", isFrozen = false, 
+            customTargetOptions = setCustomTargetOptions(
+                pushTargetOptions, {
+                    offset = {x =  -0.4, y = -1.1, z = -0.8},
+                    rotation = {x = 0.0, y = 0.0, z = -90.0},
+                    animationDict = "missfinale_c2ig_11",
+                    animationName = "pushcar_offcliff_f",
+                }
+            )
+        },
+    {item = "stretcher2", label = "Stretcher 2", model = "sittingstrykergurney", isFrozen = false, 
+            customTargetOptions = setCustomTargetOptions(
+                pushTargetOptions, {
+                    offset = {x =  -0.4, y = -1.1, z = -0.8},
+                    rotation = {x = 0.0, y = 0.0, z = -90.0},
+                    animationDict = "missfinale_c2ig_11",
+                    animationName = "pushcar_offcliff_f",
+                }
+            )
+        },
+    {item = "stretcher3", label = "Stretcher 3", model = "sittingfernocot", isFrozen = false, 
+            customTargetOptions = setCustomTargetOptions(
+                pushTargetOptions, {
+                    offset = {x =  -0.4, y = -1.5, z = -0.8},
+                    rotation = {x = 0.0, y = 0.0, z = -90.0},
+                    animationDict = "missfinale_c2ig_11",
+                    animationName = "pushcar_offcliff_f",
+                }
+            )
+        },
+    {item = "stretcher4", label = "Backboard", model = "combicarrier2", isFrozen = false, 
+            customTargetOptions = setCustomTargetOptions(
+                pushTargetOptions, {
+                    offset = {x =  -0.4, y = -1.3, z = 0.1},
+                    rotation = {x = 0.0, y = 0.0, z = -90.0},
+                    animationDict = "missfinale_c2ig_11",
+                    animationName = "pushcar_offcliff_f",
+                }
+            )
+        },
+    {item = "stretcher5", label = "Stretcher 5", model = "fernocot", isFrozen = false, 
+            customTargetOptions = setCustomTargetOptions(
+                pushTargetOptions, {
+                    offset = {x =  -0.4, y = -1.1, z = -0.8},
+                    rotation = {x = 0.0, y = 0.0, z = -90.0},
+                    animationDict = "missfinale_c2ig_11",
+                    animationName = "pushcar_offcliff_f",
+                }
+            )
+        },
+    {item = "wheelchair", label = "Wheelchair", model = "prop_wheelchair_01", isFrozen = false, 
+            customTargetOptions = setCustomTargetOptions(
+                pushAndSitTargetOptions, {
+                    offset = {x =  -0.4, y = -1.9, z = -0.3},
+                    rotation = {x = 0.0, y = 0.0, z = 180.0},
+                    animationDict = "missfinale_c2ig_11",
+                    animationName = "pushcar_offcliff_f",
+                }, {
+                    offset = {x = -0.075, y = -0.4, z = 0.6},
+                    rotation = {x = 10.0, y = 7.0, z = 170.0},
+                    animationDict = "timetable@ron@ron_ig_2_alt1",
+                    animationName = "ig_2_alt1_base",
+                }
+            )
+        },
     {item = "wheelbarrow", label = "Wheelbarrow", model = "prop_wheelbarrow01a", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushAndSitTargetOptions, {
@@ -507,17 +609,17 @@ Config.PlaceableProps = {
 
     -- Yogamats
     -- Uncomment this line if you are using wp-yogamats
-    -- {item = "yogamat_blue", label = "Yoga mat (Blue)", model = "prop_yoga_mat_01", isFrozen = true, customTargetOptions = yogaCustomTargetOptions},
-    -- {item = "yogamat_black", label = "Yoga mat (Black)", model = "prop_yoga_mat_02", isFrozen = true, customTargetOptions = yogaCustomTargetOptions},
-    -- {item = "yogamat_red", label = "Yoga mat (Red)", model = "prop_yoga_mat_03", isFrozen = true, customTargetOptions = yogaCustomTargetOptions},
+    {item = "yogamat_blue", label = "Yoga mat (Blue)", model = "prop_yoga_mat_01", isFrozen = true, customTargetOptions = yogaCustomTargetOptions},
+    {item = "yogamat_black", label = "Yoga mat (Black)", model = "prop_yoga_mat_02", isFrozen = true, customTargetOptions = yogaCustomTargetOptions},
+    {item = "yogamat_red", label = "Yoga mat (Red)", model = "prop_yoga_mat_03", isFrozen = true, customTargetOptions = yogaCustomTargetOptions},
 
     -- Printers
     -- Uncomment this line if you are using wp-printer
-    -- {item = "printer", label = "Printer", model = "prop_printer_01", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
-    -- {item = "printer2", label = "Printer", model = "prop_printer_02", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
-    -- {item = "printer3", label = "Printer", model = "v_res_printer", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
-    -- {item = "printer4", label = "Printer", model = "v_ret_gc_print", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
-    -- {item = "photocopier", label = "Photocopier", model = "v_med_cor_photocopy", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
+    {item = "printer", label = "Printer", model = "prop_printer_01", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
+    {item = "printer2", label = "Printer", model = "prop_printer_02", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
+    {item = "printer3", label = "Printer", model = "v_res_printer", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
+    {item = "printer4", label = "Printer", model = "v_ret_gc_print", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
+    {item = "photocopier", label = "Photocopier", model = "v_med_cor_photocopy", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
     
     -- Fireworks
     -- Uncomment this line if you are using wp-fireworks
